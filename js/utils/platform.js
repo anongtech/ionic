@@ -246,6 +246,14 @@
 
     /**
      * @ngdoc method
+     * @name ionic.Platform#isMicroMessenger
+     * @returns {boolean} Whether we are running on micro messenger browser
+     */
+    isMicroMessenger: function() {
+      return self.ua.toLowerCase().indexOf('micromessenger') >= 0;
+    },
+    /**
+     * @ngdoc method
      * @name ionic.Platform#platform
      * @returns {string} The name of the current platform.
      */

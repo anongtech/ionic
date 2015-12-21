@@ -1145,7 +1145,12 @@ ionic.views.Scroll = ionic.views.View.inherit({
 
       }
 
-      var translate3dX = 'translate3d(' + x + 'px, 0, 0) scaleX(' + widthScale + ')';
+      var translate3dX;
+      if (ionic.Platform.isAndroid() && ionic.Platform.isMicroMessenger()) {
+          translate3dX = 'translate(' + x + 'px, 0) scaleX(' + widthScale + ')';
+      } else {
+          translate3dX = 'translate3d(' + x + 'px, 0, 0) scaleX(' + widthScale + ')';
+      }
       if (self.__indicatorX.transformProp !== translate3dX) {
         self.__indicatorX.indicator.style[self.__transformProperty] = translate3dX;
         self.__indicatorX.transformProp = translate3dX;
@@ -1195,7 +1200,12 @@ ionic.views.Scroll = ionic.views.View.inherit({
 
       }
 
-      var translate3dY = 'translate3d(0,' + y + 'px, 0) scaleY(' + heightScale + ')';
+      var translate3dY;
+      if (ionic.Platform.isAndroid() && ionic.Platform.isMicroMessenger()) {
+          translate3dY = 'translate(0,' + y + 'px) scaleY(' + heightScale + ')';
+      } else {
+          translate3dY = 'translate3d(0,' + y + 'px, 0) scaleY(' + heightScale + ')';
+      }
       if (self.__indicatorY.transformProp !== translate3dY) {
         self.__indicatorY.indicator.style[self.__transformProperty] = translate3dY;
         self.__indicatorY.transformProp = translate3dY;
@@ -1290,7 +1300,12 @@ ionic.views.Scroll = ionic.views.View.inherit({
     if (helperElem.style[perspectiveProperty] !== undef) {
 
       return function(left, top, zoom, wasResize) {
-        var translate3d = 'translate3d(' + (-left) + 'px,' + (-top) + 'px,0) scale(' + zoom + ')';
+        var translate3d;
+        if (ionic.Platform.isAndroid() && ionic.Platform.isMicroMessenger()) {
+            translate3d = 'translate(' + (-left) + 'px,' + (-top) + 'px) scale(' + zoom + ')';
+        } else {
+            translate3d = 'translate3d(' + (-left) + 'px,' + (-top) + 'px,0) scale(' + zoom + ')';
+        }
         if (translate3d !== self.contentTransform) {
           content.style[transformProperty] = translate3d;
           self.contentTransform = translate3d;

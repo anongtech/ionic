@@ -205,7 +205,11 @@ ionic.views.Slider = ionic.views.View.inherit({
       style.OTransitionDuration =
       style.transitionDuration = speed + 'ms';
 
-      style.webkitTransform = 'translate(' + dist + 'px,0)' + 'translateZ(0)';
+      var webkitTransform = 'translate(' + dist + 'px,0)';
+      if (!ionic.Platform.isAndroid() || !ionic.Platform.isMicroMessenger()) {
+          webkitTransform = webkitTransform + ' translateZ(0)';
+      }
+      style.webkitTransform = webkitTransform;
       style.msTransform =
       style.MozTransform =
       style.OTransform = 'translateX(' + dist + 'px)';
