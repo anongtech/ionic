@@ -638,7 +638,7 @@ function keyboardGetHeight() {
   if (ionic.Platform.isAndroid()) {
     // should be using the plugin, no way to know how big the keyboard is, so guess
     if ( ionic.Platform.isFullScreen ) {
-      return 275;
+      return 400;
     }
     // otherwise just calculate it
     var contentHeight = window.innerHeight;
@@ -658,7 +658,7 @@ function keyboardGetHeight() {
     }
 
     if (!ionic.Platform.isWebView()) {
-      return 216;
+      return 275;
     }
 
     return 260;
@@ -782,4 +782,3 @@ ionic.Platform.ready(function() {
     document.addEventListener('touchstart', keyboardInit, false);
   }
 });
-
