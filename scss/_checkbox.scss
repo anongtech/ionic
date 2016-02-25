@@ -92,8 +92,10 @@ input:checked + .checkbox-icon:before {
   @include transition(opacity .05s ease-in-out);
   @include rotate(-45deg);
   position: absolute;
-  top: 33%;
-  left: 25%;
+  top: 28%;
+  left: 24%;
+  //top: 33%;
+  //left: 25%;
   display: table;
   width: ($checkbox-width / 2);
   height: ($checkbox-width / 4);
