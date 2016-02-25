@@ -96,7 +96,8 @@ input:checked + .checkbox-icon:before {
   left: 25%;
   display: table;
   width: ($checkbox-width / 2);
-  height: ($checkbox-width / 4) - 1;
+  height: ($checkbox-width / 4);
+  //height: ($checkbox-width / 4) - 1;
   border: $checkbox-check-width solid $checkbox-check-color;
   border-top: 0;
   border-right: 0;
