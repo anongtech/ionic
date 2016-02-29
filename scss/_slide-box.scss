@@ -33,7 +33,8 @@
 
 .slider-pager {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
+  //bottom: 20px;
   z-index: $z-index-slider-pager;
   width: 100%;
   height: 15px;
@@ -41,16 +42,29 @@
 
   .slider-pager-page {
     display: inline-block;
-    margin: 0px 3px;
-    width: 15px;
+    margin: 0px $slider-pager-radius/2;
+    width: $slider-pager-radius;
+    //width: 15px;
     color: #000;
     text-decoration: none;
 
-    opacity: 0.3;
+    opacity: 1;
+    //opacity: 0.3;
+
+    & i { //custom
+      display: inline-block;
+      width: $slider-pager-radius;
+      height: $slider-pager-radius;
+      border-radius: $slider-pager-radius;
+      background-color: $button-stable-active-bg;
+    }
 
     &.active {
       @include transition(opacity 0.4s ease-in);
       opacity: 1;
+      & i { //custom
+        background-color: $assertive;
+      }
     }
   }
 }
