@@ -51,7 +51,7 @@
     opacity: 1;
     //opacity: 0.3;
 
-    & i { //custom
+    i { //custom
       display: inline-block;
       width: $slider-pager-radius;
       height: $slider-pager-radius;
@@ -62,7 +62,7 @@
     &.active {
       @include transition(opacity 0.4s ease-in);
       opacity: 1;
-      & i { //custom
+      i { //custom
         background-color: $assertive;
       }
     }

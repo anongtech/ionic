@@ -187,7 +187,8 @@
       &.icon-left:before,
       &.icon-right:before {
         vertical-align: top;
-        font-size: $button-large-icon-size;
+        font-size: $button-bar-button-icon-size; //custom
+        //font-size: $button-large-icon-size;
         line-height: $button-bar-button-height;
       }
     }
@@ -201,7 +202,8 @@
       &.icon:before,
       &.icon-left:before,
       &.icon-right:before {
-        font-size: $button-large-icon-size;
+        font-size: $button-bar-button-icon-size; //custom
+        //font-size: $button-large-icon-size;
         line-height: $button-bar-button-height;
       }
     }
@@ -344,9 +346,25 @@
   top: 0;
   border-top-width: 0;
   border-bottom-width: 1px;
+  background-color: $assertive; //custom
   &.has-tabs-top{
     border-bottom-width: 0px;
     background-image: none;
+  }
+  color: #fff; //custom
+  .title { //custom
+    color: #fff;
+  }
+  .button{ //custom
+    color: #fff;
+  }
+  a.button{ //custom
+    .icon:before,
+    &.icon:before,
+    &.icon-left:before,
+    &.icon-right:before{
+      margin-top: 0px;
+    }
   }
 }
 .tabs-top .bar-header{
