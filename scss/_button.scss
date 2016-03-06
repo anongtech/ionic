@@ -14,7 +14,7 @@
   padding: 0 $button-padding;
 
   min-width: ($button-padding * 3) + $button-font-size;
-  min-height: $button-height + 5px;
+  min-height: $button-height + 2;
 
   border-width: $button-border-width;
   border-style: solid;
@@ -66,10 +66,10 @@
     padding-left: .2em;
   }
 
-  &.button-block, &.button-full {
-    margin-top: $button-block-margin;
-    margin-bottom: $button-block-margin;
-  }
+  //&.button-block, &.button-full {
+  //  margin-top: $button-block-margin;
+  //  margin-bottom: $button-block-margin;
+  //}
 
   &.button-light {
     @include button-style($button-light-bg, $button-light-border, $button-light-active-bg, $button-light-active-border, $button-light-text);
@@ -95,7 +95,7 @@
     @include button-outline($button-calm-bg);
   }
 
-  &.button-assertive {
+  &.button-assertive, &.button-primary {
     @include button-style($button-assertive-bg, $button-assertive-border, $button-assertive-active-bg, $button-assertive-active-border, $button-assertive-text);
     @include button-clear($button-assertive-bg);
     @include button-outline($button-assertive-bg);
@@ -125,10 +125,31 @@
     @include button-outline($button-dark-bg);
   }
 }
+.button-primary {
+  @include button-style($button-assertive-bg, $button-assertive-border, $button-assertive-active-bg, $button-assertive-active-border, $button-assertive-text);
+  @include button-clear($button-assertive-bg);
+  @include button-outline($button-assertive-bg);
+}
 
-.button-small {
+.button.button-xsmall, button.button-xsmall {
+  padding: 0 $button-xsmall-padding;
+  min-width: $button-xsmall-height * 3 - 4;
+  min-height: $button-xsmall-height + 2;
+  font-size: $button-xsmall-font-size;
+  line-height: $button-xsmall-height - $button-border-width + 1;
+
+  .icon:before,
+  &.icon:before,
+  &.icon-left:before,
+  &.icon-right:before {
+    font-size: $button-xsmall-icon-size;
+    line-height: $button-xsmall-icon-size + 2;
+  }
+}
+
+.button.button-small, button.button-small {
   padding: 2px $button-small-padding 1px;
-  min-width: $button-small-height;
+  min-width: $button-small-height * 3 - 4;
   min-height: $button-small-height + 2;
   font-size: $button-small-font-size;
   line-height: $button-small-height - $button-border-width - 1;
@@ -143,12 +164,13 @@
   }
 }
 
-.button-large {
+.button.button-large, button.button-large {
   padding: 0 $button-large-padding;
   min-width: ($button-large-padding * 3) + $button-large-font-size;
-  min-height: $button-large-height + 5;
+  min-height: $button-large-height + 2;
   font-size: $button-large-font-size;
-  line-height: $button-large-height - $button-border-width;
+  line-height: $button-large-height;
+  //line-height: $button-large-height - $button-border-width;
 
   .icon:before,
   &.icon:before,
@@ -228,6 +250,8 @@
 
 button.button-block,
 button.button-full,
+.button.button-block,
+.button.button-full,
 .button-full > button.button,
 input.button.button-block  {
   width: 100%;

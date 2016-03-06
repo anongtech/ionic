@@ -20,8 +20,8 @@
 
     .text-refreshing,
     .text-pulling {
-      font-size: 16px;
-      line-height: 16px;
+      font-size: 12px;
+      line-height: 12px;
     }
     &.ionic-refresher-with-text {
       bottom: 10px;
@@ -50,6 +50,10 @@
   }
   .icon-refreshing {
     @include animation-duration(1.5s);
+    .spinner svg{ //custom
+      width: 23px;
+      height: 23px;
+    }
   }
 
   &.active {

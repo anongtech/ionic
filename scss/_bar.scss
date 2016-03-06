@@ -357,6 +357,9 @@
   }
   .button{ //custom
     color: #fff;
+    &.button-clear, &:hover{
+      color: #fff;
+    }
   }
   a.button{ //custom
     .icon:before,
@@ -383,6 +386,11 @@
 
   &.item-input-inset {
     position: absolute;
+  }
+  .button, button{ //custom
+    min-height: $button-height + 2;
+    line-height: $button-height - $button-border-width + 1px;
+    font-size: $button-font-size;
   }
 }
 
