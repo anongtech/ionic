@@ -10,10 +10,10 @@
   z-index: $z-index-item; // Make sure the borders and stuff don't get hidden by children
   display: block;
 
-  margin: $item-border-width * -1;
+  margin: $item-border-width * -1 0;
   padding: $item-padding;
 
-  border-width: $item-border-width;
+  border-width: $item-border-width 0;
   border-style: solid;
   font-size: $item-font-size;
 
@@ -347,17 +347,20 @@ a.item-content {
 }
 
 .item-icon-right {
-  padding-right: ceil( ($item-padding * 3) + ($item-padding / 3) );
+  padding-right: ceil( ($item-padding * 2) + ($item-padding / 2) );
+  //padding-right: ceil( ($item-padding * 3) + ($item-padding / 3) );
 
   .icon {
-    right: ceil( ($item-padding / 3) * 2);
+    right: 1px;
+    //right: ceil( ($item-padding / 3) * 2);
   }
 }
 .item-complex.item-icon-right {
   padding-right: 0;
 
   .item-content {
-    padding-right: ceil( ($item-padding * 3) + ($item-padding / 3) );
+    padding-right: ceil( ($item-padding * 2) + ($item-padding / 2) );
+    //padding-right: ceil( ($item-padding * 3) + ($item-padding / 3) );
   }
 }
 
@@ -503,8 +506,10 @@ button.item.item-button-right {
 
 .item-thumbnail-left,
 .item-thumbnail-left .item-content {
-  padding-top: $item-padding / 2;
-  padding-left: $item-thumbnail-width + $item-thumbnail-margin + $item-padding;
+  padding-top: $item-padding - 2;
+  //padding-top: $item-padding / 2;
+  padding-left: $item-thumbnail-width + ($item-thumbnail-margin * 2);
+  //padding-left: $item-thumbnail-width + $item-thumbnail-margin + $item-padding;
   min-height: $item-thumbnail-height + ($item-thumbnail-margin * 2);
 
   > img:first-child,
@@ -518,6 +523,28 @@ button.item.item-button-right {
     height: 100%;
   }
 }
+.item-thumbnail-left.item-thumbnail-medium,
+.item-thumbnail-left.item-thumbnail-medium .item-content {
+  padding-left: $item-thumbnail-width + ($item-thumbnail-margin * 3);
+  min-height: $item-thumbnail-height + ($item-thumbnail-margin * 3);
+
+  > img:first-child,
+  .item-image {
+    max-width: $item-thumbnail-width + 10;
+    max-height: $item-thumbnail-height + 10;
+  }
+}//custom
+.item-thumbnail-left.item-thumbnail-large,
+.item-thumbnail-left.item-thumbnail-large .item-content {
+  padding-left: $item-thumbnail-width + ($item-thumbnail-margin * 4);
+  min-height: $item-thumbnail-height + ($item-thumbnail-margin * 4);
+
+  > img:first-child,
+  .item-image {
+    max-width: $item-thumbnail-width + 20;
+    max-height: $item-thumbnail-height + 20;
+  }
+}//custom
 .item-avatar.item-complex,
 .item-avatar-left.item-complex,
 .item-thumbnail-left.item-complex {
