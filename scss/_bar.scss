@@ -196,7 +196,8 @@
       padding-right: 2px;
       padding-left: 2px;
       font-weight: 300;
-      font-size: $bar-title-font-size;
+      font-size: $bar-title-font-size - 2;
+      //font-size: $bar-title-font-size;
 
       .icon:before,
       &.icon:before,
